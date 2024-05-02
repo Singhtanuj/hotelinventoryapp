@@ -1,0 +1,45 @@
+<h2>{{title}}</h2>
+
+    <table class="table bordered mb-3 " style="box-shadow: 2px 2px 8px rgba(0,0,0,0.5);">
+        <thead>
+            <tr>
+                <th>Sr.No</th>
+                <th>Even/Odd</th>
+                <th>Room Number</th>
+                <th>Room Type</th>
+                <th>Amenities</th>
+                <th>Price</th>
+                <th>CheckInTime</th>
+                <th>CheckOutTime</th>
+                <th>Rating</th>
+                <th>Select</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr *ngFor="let list of rooms; let e=even; let o=odd; let i=index">
+                <td [ngClass]="e ? 'even' : 'odd'">{{i}}</td>
+                <td [ngClass]="e ? 'even' : 'odd'">{{ e ? "Even" : "Odd"}}</td>
+                <td [ngClass]="e ? 'even' : 'odd'">{{list.roomNumber}}</td>
+                <td [ngClass]="e ? 'even' : 'odd'">{{list.roomType}}</td>
+                <td [ngClass]="e ? 'even' : 'odd'">{{list.amenities}}</td>
+                <td [ngClass]="e ? 'even' : 'odd'">{{list.price | currency : 'INR'}}</td>
+                <td [ngClass]="e ? 'even' : 'odd'">{{list.checkintime | date }}</td>
+                <td [ngClass]="e ? 'even' : 'odd'">{{list.checkouttime | date }}</td>
+                <td [ngClass]="e ? 'even' : 'odd'">{{list.rating | number }}</td>
+                <td [ngClass]="e ? 'even' : 'odd'">
+                    <!-- <button class="btn btn-primary" (click)="selected(list)" >Selected</button> -->
+                    <button class="btn btn-primary" [routerLink]="['/rooms', list.id]">Book Room</button>
+                </td>
+                <td [ngClass]="e ? 'even' : 'odd'">
+                    <button class="btn btn-success" (click)="editRoom(list)" >Edit</button>
+                </td>
+                
+                <td [ngClass]="e ? 'even' : 'odd'">
+                    <button class="btn btn-danger" (click)="delete(list.id!)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>

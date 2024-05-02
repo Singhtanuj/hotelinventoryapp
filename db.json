@@ -1,0 +1,36 @@
+{
+  "createRoom": [
+    {
+      "roomNumber": "1",
+      "roomType": "Economy",
+      "amenities": "Kitchen Ac Wifi",
+      "price": "18000",
+      "checkintime": "2023-10-01",
+      "checkouttime": "2023-10-03",
+      "rating": 3,
+      "id": 1
+    },
+    {
+      "roomNumber": "2",
+      "roomType": "Deluxe",
+      "amenities": "ac ",
+      "price": "15000",
+      "photo": "photos",
+      "checkintime": "2023-10-01",
+      "checkouttime": "2023-10-02",
+      "rating": "3",
+      "id": 2
+    },
+    {
+      "roomNumber": "3",
+      "roomType": "Delux",
+      "amenities": "air conditioner, free wi-fi, bathroom",
+      "price": "20000",
+      "photo": "https://unsplash.com/photos/bw0UE0UOIwo",
+      "checkintime": "2021-11-10T18:30:00.000Z",
+      "checkouttime": "2021-11-11T18:30:00.000Z",
+      "rating": "4.6",
+      "id": 3
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin: 0 auto;
+    border: 3px solid indigo;
+    // border: 3px solid rgba(0,0,0,0.3);
+    padding: 15px;
+}
+
+form h1 {
+    color: indigo
+}
+
+.mat-progress-spinner[mode=indeterminate] {
+    display: grid;
+    place-items: center;
+    height: 60px !important;
+}
+
+.mat-progress-spinner[mode=indeterminate] svg {
+    width: 60px !important;
+    height: 60px !important;
+
+}

@@ -1,0 +1,66 @@
+<h1>Welcome to {{hotelName}}</h1>
+<inventory-header></inventory-header>
+<!-- <div *ngIf="hideRooms" style="display: flex;">
+    Numbers of Rooms : <div [ngStyle]="{ 'color' : rooms.availableRooms ? 'green' : 'red' }" [innerText]="numberOfRooms"></div>
+</div> -->
+Numbers of Rooms : {{numberOfRooms}} <br>
+{{rooms?.availableRooms ?? 'no rooms'}}
+
+Rooms List <button (click)="toggle()">Toggle</button>
+
+<!-- <button class="btn btn-primary m-2" (click)="addRoom()">Add Rooms</button> -->
+<!-- <button class="btn btn-secondary m-2" (click)="editRoom()">Edit Room</button> -->
+<!-- <button class="btn btn-danger m-2" (click)="deleteRoom()">Delete Room</button> -->
+<button class="btn btn-primary m-2" (click)="changeTitle()">changeTitle</button>
+
+<br>
+<h4>
+    {{getCatchErr$ | async}}
+</h4>
+
+
+<div *ngIf="hideRooms">
+    <div *ngIf="rooms$ | async as rooms">
+        <inventory-rooms-list [title]="title" [rooms]="roomList" (selectedRoom)="selectRoom($event)" (deleteRoom)="delete($event)" (updateRoom)="editRoom($event)"></inventory-rooms-list>
+    </div>
+    
+    <hr>
+
+<router-outlet></router-outlet>
+   
+
+</div>
+
+
+
+
+<!-- <div *ngIf="rooms?.availableRooms!==undefined && rooms?.availableRooms && hideRooms ">
+    
+    <table class="table bordered mb-3">
+        <thead>
+            <tr>
+                <th>Sr.No</th>
+                <th>Even/Odd</th>
+                <th>Room Type</th>
+                <th>Amenities</th>
+                <th>Price</th>
+                <th>CheckInTime</th>
+                <th>CheckOutTime</th>
+                <th>Rating</th>
+            </tr>
+
+        </thead>
+        <tbody >
+            <tr [ngClass]="e ? 'even' : 'odd'" *ngFor="let list of roomList; let e=even; let o=odd; let i=index">
+                <td [ngClass]="e ? 'even' : 'odd'">{{i}}</td>
+                <td [ngClass]="e ? 'even' : 'odd'">{{ e ? "Even" : "Odd"}}</td>
+                <td [ngClass]="e ? 'even' : 'odd'">{{list.roomType}}</td>
+                <td [ngClass]="e ? 'even' : 'odd'">{{list.amenities | lowercase}}</td>
+                <td [ngClass]="e ? 'even' : 'odd'">{{list.price | currency : 'INR'}}</td>
+                <td [ngClass]="e ? 'even' : 'odd'">{{list.checkintime | date}}</td>
+                <td [ngClass]="e ? 'even' : 'odd'">{{list.checkouttime | date}}</td>
+                <td [ngClass]="e ? 'even' : 'odd'">{{list.rating | number }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
